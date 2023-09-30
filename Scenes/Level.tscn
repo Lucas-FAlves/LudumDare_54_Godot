@@ -1,33 +1,111 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhfm63bjoib4y"]
+[gd_scene load_steps=8 format=3 uid="uid://dhfm63bjoib4y"]
 
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="3_flfw1"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="3_iu1gn"]
+[ext_resource type="Script" path="res://Scenes/triggertentaculo.gd" id="4_83wvj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
+size = Vector2(123, 128.653)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
-size = Vector2(592, 20)
+size = Vector2(1162, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xiyr"]
+size = Vector2(125, 110)
 
 [node name="Level" type="Node2D"]
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(878, 545)
+scale = Vector2(1, 1.53125)
+priority = 1
+script = ExtResource("4_83wvj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vj7hb")
+debug_color = Color(0.933333, 0, 0.647059, 0.419608)
+
+[node name="Timer" type="Timer" parent="Area2D"]
+one_shot = true
+
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(571, 325.5)
+position = Vector2(572, 327.5)
 scale = Vector2(9.0625, 5.14844)
 texture = ExtResource("1_5aemt")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(275, 94)
+[node name="cima" type="RigidBody2D" parent="."]
+position = Vector2(250, 16)
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="cima"]
+position = Vector2(327, -23)
+scale = Vector2(0.75651, 0.0110677)
+texture = ExtResource("3_iu1gn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cima"]
+position = Vector2(323, -24)
+shape = SubResource("RectangleShape2D_2w6an")
+
+[node name="esquerda" type="RigidBody2D" parent="."]
+position = Vector2(-24, 129)
+rotation = 1.57509
+scale = Vector2(0.601672, 1.02979)
 gravity_scale = 0.0
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(284, -0.5)
-scale = Vector2(0.378906, 0.0110677)
+[node name="Sprite2D" type="Sprite2D" parent="esquerda"]
+position = Vector2(327, -23)
+scale = Vector2(0.75651, 0.0110677)
 texture = ExtResource("3_iu1gn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(286, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="esquerda"]
+position = Vector2(323, -24)
+shape = SubResource("RectangleShape2D_2w6an")
+
+[node name="direita" type="RigidBody2D" parent="."]
+position = Vector2(1135, 134)
+rotation = 1.57509
+scale = Vector2(0.594864, 1.00319)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="direita"]
+position = Vector2(327, -23)
+scale = Vector2(0.75651, 0.0110677)
+texture = ExtResource("3_iu1gn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="direita"]
+position = Vector2(323, -24)
+shape = SubResource("RectangleShape2D_2w6an")
+
+[node name="baixo" type="RigidBody2D" parent="."]
+position = Vector2(247, 675)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="baixo"]
+position = Vector2(327, -23)
+scale = Vector2(0.75651, 0.0110677)
+texture = ExtResource("3_iu1gn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="baixo"]
+position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
 [node name="Player_Character" parent="." instance=ExtResource("3_flfw1")]
-position = Vector2(593, 281)
+process_mode = 1
+position = Vector2(593, 285)
+
+[node name="Area2D" type="Area2D" parent="Player_Character"]
+
+[node name="Timer" type="Timer" parent="Player_Character/Area2D"]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Character/Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_7xiyr")
+debug_color = Color(0.560784, 0.560784, 0, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
