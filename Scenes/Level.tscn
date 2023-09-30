@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhfm63bjoib4y"]
+
+[ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
+[ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="3_flfw1"]
+[ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="3_iu1gn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
+size = Vector2(592, 20)
+
+[node name="Level" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(571, 325.5)
+scale = Vector2(9.0625, 5.14844)
+texture = ExtResource("1_5aemt")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(275, 94)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(284, -0.5)
+scale = Vector2(0.378906, 0.0110677)
+texture = ExtResource("3_iu1gn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(286, 0)
+shape = SubResource("RectangleShape2D_2w6an")
+
+[node name="Player_Character" parent="." instance=ExtResource("3_flfw1")]
+position = Vector2(593, 281)
