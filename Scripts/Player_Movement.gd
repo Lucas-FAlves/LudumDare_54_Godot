@@ -4,9 +4,12 @@ extends CharacterBody2D
 @export var aceleration = 1500
 @export var friction = 1200
 @export var axis = Vector2.ZERO
+var isFrozen = false
 
 func _physics_process(delta):
 	move(delta)
+	
+	
  
 func get_input_Axis():
 	#Verifica se o jogador tá pressionando para ir em direções opostas, se tiver elas se anulam
