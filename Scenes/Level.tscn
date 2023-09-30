@@ -109,3 +109,4 @@ shape = SubResource("RectangleShape2D_7xiyr")
 debug_color = Color(0.560784, 0.560784, 0, 0.419608)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
