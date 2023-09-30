@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://167vaub0r1l0"]
+[gd_scene load_steps=6 format=3 uid="uid://167vaub0r1l0"]
 
 [ext_resource type="Script" path="res://Scripts/Player_Movement.gd" id="1_o408s"]
+[ext_resource type="Script" path="res://Scripts/Rotation_Handler.gd" id="2_a63fi"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="2_k4vtl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33yp7"]
@@ -15,6 +16,7 @@ script = ExtResource("1_o408s")
 [node name="PlayerCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33yp7")
+script = ExtResource("2_a63fi")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerCollider"]
 position = Vector2(-0.5, -0.5)
