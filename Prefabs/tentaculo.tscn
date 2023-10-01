@@ -1,12 +1,98 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjem8685ufbgt"]
+[gd_scene load_steps=23 format=3 uid="uid://bjem8685ufbgt"]
 
 [ext_resource type="Script" path="res://Scenes/triggertentaculo.gd" id="1_qqwfq"]
+[ext_resource type="Texture2D" uid="uid://c6upt4w8iy34k" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_0.png" id="2_1b6ca"]
+[ext_resource type="Texture2D" uid="uid://nwqvfdtlr3cg" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_1.png" id="3_rrgks"]
+[ext_resource type="Texture2D" uid="uid://bqjhf0fp87y7h" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_2.png" id="4_q7cic"]
+[ext_resource type="Texture2D" uid="uid://ws5akqmjobl8" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_3.png" id="5_x7ucn"]
+[ext_resource type="Texture2D" uid="uid://dlbchiqjh3u38" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_4.png" id="6_hu3tk"]
+[ext_resource type="Texture2D" uid="uid://doj8utfedd37x" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_5.png" id="7_tt2dl"]
+[ext_resource type="Texture2D" uid="uid://dufp402rrbg2a" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_6.png" id="8_mfm2x"]
+[ext_resource type="Texture2D" uid="uid://b17rpeyjdv2cr" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_7.png" id="9_2w24q"]
+[ext_resource type="Texture2D" uid="uid://dx4wm7wxijb55" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_8.png" id="10_ojmme"]
+[ext_resource type="Texture2D" uid="uid://bxwom2tsupgbx" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_9.png" id="11_cipli"]
+[ext_resource type="Texture2D" uid="uid://d1rks2fusl2rc" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_10.png" id="12_qats7"]
+[ext_resource type="Texture2D" uid="uid://cf043gnnaqt5a" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_11.png" id="13_skrkc"]
+[ext_resource type="Texture2D" uid="uid://cg60mpqgj3u7r" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_12.png" id="14_3dcc8"]
+[ext_resource type="Texture2D" uid="uid://bq0vqqioctqp" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_0.png" id="15_7fxj6"]
+[ext_resource type="Texture2D" uid="uid://cbvkt5mt6jjls" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_1.png" id="16_p24ft"]
+[ext_resource type="Texture2D" uid="uid://wnlir105wj4j" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_2.png" id="17_832km"]
+[ext_resource type="Texture2D" uid="uid://c78dwistgkobr" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_3.png" id="18_87o60"]
+[ext_resource type="Texture2D" uid="uid://6hhvav3dk53a" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_4.png" id="19_6ckrb"]
+[ext_resource type="Script" path="res://Scripts/TentacleAnimHandler.gd" id="20_qvxax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
 size = Vector2(123, 128.653)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkjhu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1b6ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rrgks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q7cic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x7ucn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hu3tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tt2dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mfm2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2w24q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ojmme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cipli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qats7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_skrkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3dcc8")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_7fxj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_p24ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_832km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_87o60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6ckrb")
+}],
+"loop": true,
+"name": &"Spawn",
+"speed": 5.0
+}]
+
 [node name="Area2D" type="Area2D"]
-position = Vector2(878, 545)
+position = Vector2(542, 264)
 scale = Vector2(1, 1.53125)
 priority = 1
 script = ExtResource("1_qqwfq")
@@ -17,6 +103,16 @@ debug_color = Color(0.933333, 0, 0.647059, 0.419608)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dkjhu")
+animation = &"Attack"
+script = ExtResource("20_qvxax")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
+position = Vector2(-34.25, -0.954086)
+scale = Vector2(3.32353, 2.52138)
+texture = ExtResource("19_6ckrb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
