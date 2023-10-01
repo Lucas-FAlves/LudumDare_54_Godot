@@ -37,6 +37,9 @@ texture = ExtResource("3_iu1gn")
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
+[node name="CharacterBody2D" parent="cima" instance=ExtResource("5_jkqyi")]
+position = Vector2(-23, 26)
+
 [node name="esquerda" type="RigidBody2D" parent="."]
 position = Vector2(-24, 129)
 rotation = 1.57509
@@ -85,6 +88,7 @@ shape = SubResource("RectangleShape2D_2w6an")
 
 [node name="CharacterBody2D" parent="baixo" instance=ExtResource("5_jkqyi")]
 position = Vector2(1, -94)
+speed = 100
 
 [node name="Player_Character" parent="." instance=ExtResource("3_flfw1")]
 process_mode = 1

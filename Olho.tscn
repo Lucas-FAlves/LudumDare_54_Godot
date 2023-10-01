@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcfj1354sh17n"]
+[gd_scene load_steps=4 format=3 uid="uid://bcfj1354sh17n"]
 
 [ext_resource type="Script" path="res://Scripts/olho.gd" id="1_m5gvs"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="2_afjpv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7sdj"]
+size = Vector2(64, 66)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_m5gvs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s7sdj")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.077488, 0.07592)
+scale = Vector2(-0.0410655, 0.0386244)
 texture = ExtResource("2_afjpv")
