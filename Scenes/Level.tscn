@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhfm63bjoib4y"]
+[gd_scene load_steps=9 format=3 uid="uid://dhfm63bjoib4y"]
 
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
 [ext_resource type="PackedScene" uid="uid://bjem8685ufbgt" path="res://Prefabs/tentaculo.tscn" id="1_hkf2b"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="3_flfw1"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="3_iu1gn"]
 [ext_resource type="Script" path="res://Scenes/movecima.gd" id="3_ls2jr"]
+[ext_resource type="PackedScene" uid="uid://ha5dvhlqmpbp" path="res://Scenes/Eye.tscn" id="5_u50mv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
 size = Vector2(1162, 20)
@@ -95,3 +96,6 @@ one_shot = true
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_7xiyr")
 debug_color = Color(0.560784, 0.560784, 0, 0.419608)
+
+[node name="Eye" parent="." instance=ExtResource("5_u50mv")]
+position = Vector2(706, 638)

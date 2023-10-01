@@ -1,15 +1,123 @@
-[gd_scene load_steps=3 format=3 uid="uid://ha5dvhlqmpbp"]
+[gd_scene load_steps=16 format=3 uid="uid://ha5dvhlqmpbp"]
 
-[ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_k2sfu"]
+[ext_resource type="Script" path="res://Scripts/Eye_Handler.gd" id="1_t8jgi"]
+[ext_resource type="Texture2D" uid="uid://dm1clvxw4s4bd" path="res://Sprites/Olho/olho_0.png" id="3_ppg11"]
+[ext_resource type="Texture2D" uid="uid://b6ulbiymymgch" path="res://Sprites/Olho/olho_1.png" id="4_ia1j2"]
+[ext_resource type="Texture2D" uid="uid://c7gtyat5phojq" path="res://Sprites/Olho/olho_2.png" id="5_ps1wi"]
+[ext_resource type="Texture2D" uid="uid://dyahj2unblw4h" path="res://Sprites/Olho/olho_3.png" id="6_haiad"]
+[ext_resource type="Texture2D" uid="uid://j78rhwrue3ax" path="res://Sprites/Olho/olho_4.png" id="7_1pp82"]
+[ext_resource type="Texture2D" uid="uid://b15bgycbb7sl" path="res://Sprites/Olho/olho_5.png" id="8_roilt"]
+[ext_resource type="Texture2D" uid="uid://c4gybvlbp7k0g" path="res://Sprites/Olho/olho_6.png" id="9_rbvvl"]
+[ext_resource type="Texture2D" uid="uid://3qdy4x0meepu" path="res://Sprites/Olho/olho_7.png" id="10_yawgf"]
+[ext_resource type="Texture2D" uid="uid://bun4m7vrecri3" path="res://Sprites/Olho/olho_8.png" id="11_u5pim"]
+[ext_resource type="Texture2D" uid="uid://bbcy1a8mniyxa" path="res://Sprites/Olho/olho_9.png" id="12_stwx8"]
+[ext_resource type="Texture2D" uid="uid://bgujdq2acan5q" path="res://Sprites/Olho/olho_10.png" id="13_00sbh"]
+[ext_resource type="Texture2D" uid="uid://bwva6t4ca5k46" path="res://Sprites/Olho/olho_11.png" id="14_ie45m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_owhb3"]
 size = Vector2(126, 125)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_edwkd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ie45m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_00sbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_stwx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u5pim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yawgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rbvvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_roilt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_haiad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1pp82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ps1wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ia1j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ppg11")
+}],
+"loop": true,
+"name": &"Closing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ppg11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ia1j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ps1wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_haiad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1pp82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_roilt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rbvvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yawgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u5pim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_stwx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_00sbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ie45m")
+}],
+"loop": true,
+"name": &"Opening",
+"speed": 5.0
+}]
+
 [node name="Eye" type="Area2D"]
-scale = Vector2(-12.196, 2.58)
+position = Vector2(419, 286)
+scale = Vector2(-1.201, 0.254)
+script = ExtResource("1_t8jgi")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_owhb3")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-texture = ExtResource("1_k2sfu")
+position = Vector2(-0.147202, -4.52386)
+scale = Vector2(1.00324, 1.3351)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D/Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_edwkd")
+animation = &"Opening"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="animation_finished" from="CollisionShape2D/Sprite2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

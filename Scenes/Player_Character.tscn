@@ -39,5 +39,7 @@ position = Vector2(10, 1)
 scale = Vector2(-0.0752756, 0.0141669)
 texture = ExtResource("2_k4vtl")
 
+[node name="Timer" type="Timer" parent="PlayerCollider/AttackArea"]
+
 [connection signal="area_entered" from="PlayerCollider/AttackArea" to="PlayerCollider/AttackArea" method="_on_area_entered"]
 [connection signal="area_exited" from="PlayerCollider/AttackArea" to="PlayerCollider/AttackArea" method="_on_area_exited"]
