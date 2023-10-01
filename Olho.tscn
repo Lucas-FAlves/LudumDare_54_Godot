@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcfj1354sh17n"]
+
+[ext_resource type="Script" path="res://Scripts/olho.gd" id="1_m5gvs"]
+[ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="2_afjpv"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_m5gvs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.077488, 0.07592)
+texture = ExtResource("2_afjpv")

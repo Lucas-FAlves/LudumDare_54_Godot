@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhfm63bjoib4y"]
+[gd_scene load_steps=9 format=3 uid="uid://dhfm63bjoib4y"]
 
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
 [ext_resource type="PackedScene" uid="uid://bjem8685ufbgt" path="res://Prefabs/tentaculo.tscn" id="1_hkf2b"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="3_flfw1"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="3_iu1gn"]
 [ext_resource type="Script" path="res://Scenes/movecima.gd" id="3_ls2jr"]
+[ext_resource type="PackedScene" uid="uid://bcfj1354sh17n" path="res://Olho.tscn" id="5_jkqyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
 size = Vector2(1162, 20)
@@ -81,6 +82,9 @@ texture = ExtResource("3_iu1gn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="baixo"]
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
+
+[node name="CharacterBody2D" parent="baixo" instance=ExtResource("5_jkqyi")]
+position = Vector2(1, -94)
 
 [node name="Player_Character" parent="." instance=ExtResource("3_flfw1")]
 process_mode = 1
