@@ -2,10 +2,14 @@ extends Area2D
 
 var EnemyInArea = false
 var olho
+@export var attackSpeed:float = 3
+@onready var playerSprite: AnimatedSprite2D = get_parent().get_node("AnimatedSprite2D")
+@onready var jogador = get_parent().get_parent()
 
 func _process(delta):
 	if Input.is_action_just_released("Attack"):
-		#Tocar animação do jogador atacando
+		playerSprite.play("Attacking", attackSpeed)
+		jogador.set_physics_process(false)  # Impedir o movimento do jogador
 		if EnemyInArea:
 			killNode(olho)
 			EnemyInArea = false  
@@ -18,9 +22,9 @@ func _on_area_entered(area):
 		olho = area
 		EnemyInArea = true
 
-
 func _on_area_exited(area):
 	if area.name == "Eye":  # Substitua pelo nome correto do jogador
 		EnemyInArea = false
 
-
+func _on_animated_sprite_2d_animation_finished():
+	jogador.set_physics_process(true) 

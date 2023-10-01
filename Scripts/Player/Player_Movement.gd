@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var aceleration = 1500
 @export var friction = 1200
 @export var axis = Vector2.ZERO
+@export var animSpeed: float = 2
 var isFrozen = false
 
 func _physics_process(delta):
@@ -30,11 +31,13 @@ func move(delta):
 
 func apply_friction(amount):
 	if velocity.length() > amount:
+		$PlayerCollider/AnimatedSprite2D.stop()
 		velocity -= velocity.normalized() * amount
 	else:
 		velocity = Vector2.ZERO
 
 func apply_movement(accel):
+	$PlayerCollider/AnimatedSprite2D.play("Walking", animSpeed)
 	velocity += accel
 	#não deixa o jogador passar de uma velocidade máxima
 	velocity = velocity.limit_length(max_speed)
