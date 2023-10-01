@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjem8685ufbgt"]
+
+[ext_resource type="Script" path="res://Scenes/triggertentaculo.gd" id="1_qqwfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
+size = Vector2(123, 128.653)
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(878, 545)
+scale = Vector2(1, 1.53125)
+priority = 1
+script = ExtResource("1_qqwfq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vj7hb")
+debug_color = Color(0.933333, 0, 0.647059, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

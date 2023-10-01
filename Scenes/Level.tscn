@@ -1,12 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dhfm63bjoib4y"]
 
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
+[ext_resource type="PackedScene" uid="uid://bjem8685ufbgt" path="res://Prefabs/tentaculo.tscn" id="1_hkf2b"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="3_flfw1"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="3_iu1gn"]
-[ext_resource type="Script" path="res://Scenes/triggertentaculo.gd" id="4_83wvj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
-size = Vector2(123, 128.653)
+[ext_resource type="Script" path="res://Scenes/movecima.gd" id="3_ls2jr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
 size = Vector2(1162, 20)
@@ -16,18 +14,7 @@ size = Vector2(125, 110)
 
 [node name="Level" type="Node2D"]
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(878, 545)
-scale = Vector2(1, 1.53125)
-priority = 1
-script = ExtResource("4_83wvj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_vj7hb")
-debug_color = Color(0.933333, 0, 0.647059, 0.419608)
-
-[node name="Timer" type="Timer" parent="Area2D"]
-one_shot = true
+[node name="Area2D" parent="." instance=ExtResource("1_hkf2b")]
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
@@ -36,8 +23,9 @@ scale = Vector2(9.0625, 5.14844)
 texture = ExtResource("1_5aemt")
 
 [node name="cima" type="RigidBody2D" parent="."]
-position = Vector2(250, 16)
+position = Vector2(247, 17)
 gravity_scale = 0.0
+script = ExtResource("3_ls2jr")
 
 [node name="Sprite2D" type="Sprite2D" parent="cima"]
 position = Vector2(327, -23)
@@ -107,6 +95,3 @@ one_shot = true
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_7xiyr")
 debug_color = Color(0.560784, 0.560784, 0, 0.419608)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
