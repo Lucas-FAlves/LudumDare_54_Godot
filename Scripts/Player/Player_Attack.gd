@@ -28,6 +28,5 @@ func _on_animated_sprite_2d_animation_finished():
 	if killNode:
 		killNode = false
 		olho.get_node("CollisionShape2D/AnimatedSprite2D").play("Closing")
-		olho.queue_free()
 		print("matou polvo")
 	jogador.set_physics_process(true) 

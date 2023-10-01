@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://Scripts/TentacleAnimHandler.gd" id="20_qvxax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
-size = Vector2(123, 128.653)
+size = Vector2(59.9236, 352.617)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkjhu"]
 animations = [{
@@ -66,7 +66,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_3dcc8")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack",
 "speed": 5.0
 }, {
@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_6ckrb")
 }],
-"loop": true,
+"loop": false,
 "name": &"Spawn",
 "speed": 5.0
 }]
@@ -98,6 +98,8 @@ priority = 1
 script = ExtResource("1_qqwfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31.3084, -6.4093)
+rotation = 1.57079
 shape = SubResource("RectangleShape2D_vj7hb")
 debug_color = Color(0.933333, 0, 0.647059, 0.419608)
 
@@ -105,14 +107,18 @@ debug_color = Color(0.933333, 0, 0.647059, 0.419608)
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-165.007, -19.466)
+scale = Vector2(2.71243, 2.15027)
 sprite_frames = SubResource("SpriteFrames_dkjhu")
-animation = &"Attack"
+animation = &"Spawn"
 script = ExtResource("20_qvxax")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
-position = Vector2(-34.25, -0.954086)
-scale = Vector2(3.32353, 2.52138)
+visible = false
+position = Vector2(-0.768364, 2.35527)
+scale = Vector2(1.28888, 1.26069)
 texture = ExtResource("19_6ckrb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
