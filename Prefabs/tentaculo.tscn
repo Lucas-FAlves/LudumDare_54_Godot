@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://bjem8685ufbgt"]
+[gd_scene load_steps=24 format=3 uid="uid://bjem8685ufbgt"]
 
 [ext_resource type="Script" path="res://Scenes/triggertentaculo.gd" id="1_qqwfq"]
 [ext_resource type="Texture2D" uid="uid://c6upt4w8iy34k" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_0.png" id="2_1b6ca"]
+[ext_resource type="Texture2D" uid="uid://by2mbt4ed12jc" path="res://Sprites/Tentacle_Area.png" id="2_t8cxk"]
 [ext_resource type="Texture2D" uid="uid://nwqvfdtlr3cg" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_1.png" id="3_rrgks"]
 [ext_resource type="Texture2D" uid="uid://bqjhf0fp87y7h" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_2.png" id="4_q7cic"]
 [ext_resource type="Texture2D" uid="uid://ws5akqmjobl8" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_3.png" id="5_x7ucn"]
@@ -98,10 +99,16 @@ priority = 1
 script = ExtResource("1_qqwfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(31.3084, -6.4093)
+position = Vector2(-136.16, -6.40912)
 rotation = 1.57079
 shape = SubResource("RectangleShape2D_vj7hb")
-debug_color = Color(0.933333, 0, 0.647059, 0.419608)
+debug_color = Color(1, 0.180392, 1, 0.329412)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+modulate = Color(1, 1, 1, 0.298039)
+position = Vector2(-0.666856, -0.131489)
+scale = Vector2(1.23665, 2.47212)
+texture = ExtResource("2_t8cxk")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

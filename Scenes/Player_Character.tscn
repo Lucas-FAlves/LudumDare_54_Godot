@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://167vaub0r1l0"]
+[gd_scene load_steps=36 format=3 uid="uid://167vaub0r1l0"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player_Movement.gd" id="1_3r6nk"]
 [ext_resource type="Script" path="res://Scripts/Player/Rotation_Handler.gd" id="2_1q5jo"]
@@ -33,6 +33,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33yp7"]
 size = Vector2(50, 50)
+
+[sub_resource type="Curve" id="Curve_1mwhb"]
+_data = [Vector2(0.0911458, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_af4r8"]
+width = 32
+curve = SubResource("Curve_1mwhb")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ritej"]
 animations = [{
@@ -137,6 +145,10 @@ animSpeed = 1.2
 position = Vector2(8, -36)
 shape = SubResource("RectangleShape2D_33yp7")
 script = ExtResource("2_1q5jo")
+
+[node name="PointLight2D" type="PointLight2D" parent="PlayerCollider"]
+position = Vector2(-8, 36)
+texture = SubResource("CurveTexture_af4r8")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerCollider"]
 visible = false
