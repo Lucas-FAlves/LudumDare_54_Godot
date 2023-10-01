@@ -98,4 +98,4 @@ shape = SubResource("RectangleShape2D_7xiyr")
 debug_color = Color(0.560784, 0.560784, 0, 0.419608)
 
 [node name="Eye" parent="." instance=ExtResource("5_u50mv")]
-position = Vector2(706, 638)
+position = Vector2(702, 593)
