@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://7nw6skvby7ly"]
+
+[ext_resource type="Script" path="res://Scripts/olho.gd" id="1_jqung"]
+[ext_resource type="PackedScene" uid="uid://ha5dvhlqmpbp" path="res://Scenes/Eye.tscn" id="2_xg7d6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4o6h"]
+size = Vector2(152, 32)
+
+[node name="CharacterBody2D (Olho)" type="CharacterBody2D"]
+script = ExtResource("1_jqung")
+
+[node name="Eye" parent="." instance=ExtResource("2_xg7d6")]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D (Movement)" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p4o6h")
+debug_color = Color(0.952941, 0.219608, 0.0823529, 0.419608)
+
+[editable path="Eye"]
