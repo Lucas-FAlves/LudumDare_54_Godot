@@ -23,7 +23,7 @@ scale = Vector2(9.0625, 5.14844)
 texture = ExtResource("1_5aemt")
 
 [node name="cima" type="RigidBody2D" parent="."]
-position = Vector2(247, 17)
+position = Vector2(247, 0)
 gravity_scale = 0.0
 script = ExtResource("3_ls2jr")
 
