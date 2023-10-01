@@ -38,3 +38,5 @@ func apply_movement(accel):
 	velocity += accel
 	#não deixa o jogador passar de uma velocidade máxima
 	velocity = velocity.limit_length(max_speed)
+
+

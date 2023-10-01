@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://167vaub0r1l0"]
+[gd_scene load_steps=7 format=3 uid="uid://167vaub0r1l0"]
 
-[ext_resource type="Script" path="res://Scripts/Player_Movement.gd" id="1_o408s"]
-[ext_resource type="Script" path="res://Scripts/Rotation_Handler.gd" id="2_a63fi"]
+[ext_resource type="Script" path="res://Scripts/Player/Player_Movement.gd" id="1_3r6nk"]
+[ext_resource type="Script" path="res://Scripts/Player/Rotation_Handler.gd" id="2_1q5jo"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="2_k4vtl"]
+[ext_resource type="Script" path="res://Scripts/Player/Player_Attack.gd" id="4_vaw6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33yp7"]
 size = Vector2(121, 107)
@@ -11,12 +12,12 @@ size = Vector2(121, 107)
 size = Vector2(116, 20)
 
 [node name="Player_Character" type="CharacterBody2D"]
-script = ExtResource("1_o408s")
+script = ExtResource("1_3r6nk")
 
 [node name="PlayerCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_33yp7")
-script = ExtResource("2_a63fi")
+script = ExtResource("2_1q5jo")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerCollider"]
 position = Vector2(-0.5, -0.5)
@@ -25,8 +26,18 @@ texture = ExtResource("2_k4vtl")
 
 [node name="AttackArea" type="Area2D" parent="PlayerCollider"]
 position = Vector2(-4.5, -71.5)
+script = ExtResource("4_vaw6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollider/AttackArea"]
 position = Vector2(10, 0)
 shape = SubResource("RectangleShape2D_tfmxq")
 debug_color = Color(1, 0.364706, 0.333333, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerCollider/AttackArea"]
+visible = false
+position = Vector2(10, 1)
+scale = Vector2(-0.0752756, 0.0141669)
+texture = ExtResource("2_k4vtl")
+
+[connection signal="area_entered" from="PlayerCollider/AttackArea" to="PlayerCollider/AttackArea" method="_on_area_entered"]
+[connection signal="area_exited" from="PlayerCollider/AttackArea" to="PlayerCollider/AttackArea" method="_on_area_exited"]

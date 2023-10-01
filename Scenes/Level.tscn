@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhfm63bjoib4y"]
+[gd_scene load_steps=9 format=3 uid="uid://dhfm63bjoib4y"]
 
 [ext_resource type="Script" path="res://Scripts/triggertentaculo.gd" id="1_1a5ac"]
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="3_flfw1"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="3_iu1gn"]
+[ext_resource type="PackedScene" uid="uid://ha5dvhlqmpbp" path="res://Scenes/Eye.tscn" id="5_u50mv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
 size = Vector2(123, 128.653)
@@ -98,6 +99,11 @@ texture = ExtResource("3_iu1gn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="baixo"]
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
+
+[node name="Eye" parent="." instance=ExtResource("5_u50mv")]
+position = Vector2(683, 636)
+rotation = -3.14159
+scale = Vector2(1.13607, 0.354349)
 
 [node name="Player_Character" parent="." instance=ExtResource("3_flfw1")]
 process_mode = 1
