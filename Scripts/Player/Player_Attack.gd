@@ -5,12 +5,14 @@ var olho
 @export var attackSpeed:float = 3
 @onready var playerSprite: AnimatedSprite2D = get_parent().get_node("AnimatedSprite2D")
 @onready var jogador = get_parent().get_parent()
+@onready var soundManager = get_node("/root/sound_manager")
 var killNode = false
 signal playerAttacked
 
 func _process(delta):
 	if Input.is_action_just_released("Attack"):
 		playerSprite.play("Attacking", attackSpeed)
+		sound_manager.playAudio("CharacterAttacking")
 		jogador.set_physics_process(false)  # Impedir o movimento do jogador
 		if EnemyInArea:
 			killNode = true
@@ -30,6 +32,6 @@ func _on_animated_sprite_2d_animation_finished():
 		killNode = false
 		playerAttacked.emit()
 		olho.get_node("CollisionShape2D/AnimatedSprite2D").play("Closing")
+		sound_manager.playAudio("EyesClosing")
 		olho.queue_free()
-		print("matou polvo")
 	jogador.set_physics_process(true) 

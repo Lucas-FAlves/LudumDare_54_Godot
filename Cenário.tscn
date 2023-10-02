@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://7qqgp5i0pm6p"]
+
+[ext_resource type="Texture2D" uid="uid://mslsga3wh67q" path="res://Sprites/TileSet/chao.png" id="1_ixkj2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2uih"]
+texture = ExtResource("1_ixkj2")
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+3:0/size_in_atlas = Vector2i(3, 3)
+3:0/0 = 0
+6:0/size_in_atlas = Vector2i(3, 3)
+6:0/0 = 0
+9:0/size_in_atlas = Vector2i(3, 3)
+9:0/0 = 0
+12:0/size_in_atlas = Vector2i(3, 3)
+12:0/0 = 0
+15:0/size_in_atlas = Vector2i(3, 3)
+15:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_c7cb5"]
+sources/0 = SubResource("TileSetAtlasSource_e2uih")
+
+[node name="TileMap" type="TileMap"]
+tile_set = SubResource("TileSet_c7cb5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-4, 0, 0, -1, 196608, 0, -65534, 393216, 0, -65531, 589824, 0, -65528, 786432, 0, 196604, 983040, 0, 196607, 0, 0, 131074, 196608, 0, 131077, 393216, 0, 131080, 589824, 0, 393215, 983040, 0, 393212, 0, 0, 327683, 196608, 0, 327681, 196608, 0, 327682, 196608, 0, 327685, 0, 0, 327688, 393216, 0)
