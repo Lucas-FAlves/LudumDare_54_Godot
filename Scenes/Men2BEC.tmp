@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://88ixoyyaj31u"]
+[gd_scene load_steps=3 format=3 uid="uid://88ixoyyaj31u"]
 
 [ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_0qd5l"]
 [ext_resource type="Texture2D" uid="uid://didxp2rgthqeb" path="res://Sprites/capafinal.png" id="2_7etcp"]
-[ext_resource type="FontFile" uid="uid://b1axxadwjk8ba" path="res://Fonts/Cthulhu's Calling.otf" id="3_aps25"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -25,13 +24,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = 44.0
-offset_right = 2.0
-offset_bottom = 145.0
+offset_left = 382.0
+offset_top = -250.0
+offset_right = 456.0
+offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.495, 1.495)
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -40,24 +39,17 @@ alignment = 1
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.660156, 0.894531, 0.78125, 1)
-theme_override_fonts/font = ExtResource("3_aps25")
 text = "Play"
 flat = true
 
 [node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.658824, 0.894118, 0.780392, 1)
-theme_override_fonts/font = ExtResource("3_aps25")
 text = "Controls"
 flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.660156, 0.894531, 0.78125, 1)
-theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("3_aps25")
 text = "Quit"
 flat = true
 
