@@ -8,6 +8,4 @@ func _ready():
 
 func _on_animation_finished():
 	if animation=="Spawn":
-		play("Attack")
-		#default_sprite.visible = true
-		#visible = false
+		stop()

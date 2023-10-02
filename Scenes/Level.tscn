@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhfm63bjoib4y"]
+[gd_scene load_steps=11 format=3 uid="uid://dhfm63bjoib4y"]
 
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
 [ext_resource type="PackedScene" uid="uid://bjem8685ufbgt" path="res://Prefabs/tentaculo.tscn" id="1_hkf2b"]
