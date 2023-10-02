@@ -14,7 +14,6 @@ func _ready():
 	start_movement()
 
 func _process(delta):
-	
 	if is_moving:
 		# Move o RigidBody2D na direção especificada
 		var motion = move_direction * move_speed * delta
@@ -26,6 +25,7 @@ func _process(delta):
 		if global_position.y >= initialPosition.y:
 			is_moving = false
 			print("parou")
+			sound_manager.stopAudio("WallMoving")
 
 func start_movement():
 	# Inicia o movimento
@@ -33,4 +33,5 @@ func start_movement():
 
 func stop_movement():
 	# Para o movimento
+	sound_manager.stopAudio("WallMoving")
 	is_moving = false
