@@ -7,6 +7,7 @@ var olho
 @onready var jogador = get_parent().get_parent()
 @onready var soundManager = get_node("/root/sound_manager")
 var killNode = false
+signal playerAttacked
 
 func _process(delta):
 	if Input.is_action_just_released("Attack"):
@@ -29,6 +30,7 @@ func _on_area_exited(area):
 func _on_animated_sprite_2d_animation_finished():
 	if killNode:
 		killNode = false
+		playerAttacked.emit()
 		olho.get_node("CollisionShape2D/AnimatedSprite2D").play("Closing")
 		print("matou polvo")
 	jogador.set_physics_process(true) 
