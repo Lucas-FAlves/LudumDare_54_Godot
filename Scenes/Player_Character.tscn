@@ -134,7 +134,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfmxq"]
-size = Vector2(58.9059, 49.3635)
+size = Vector2(70.6191, 52.6818)
 
 [node name="Player_Character" type="CharacterBody2D"]
 script = ExtResource("1_3r6nk")
@@ -167,8 +167,8 @@ position = Vector2(-12, -35)
 script = ExtResource("4_vaw6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollider/AttackArea"]
-position = Vector2(9.89853, 90.8338)
-rotation = 1.0472
+position = Vector2(11.6591, 96.6904)
+rotation = 1.57079
 shape = SubResource("RectangleShape2D_tfmxq")
 debug_color = Color(1, 0.364706, 0.333333, 0.419608)
 

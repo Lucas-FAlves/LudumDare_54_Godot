@@ -40,6 +40,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation=="Attack":
 		state = true
 		if playerInArea == true:
+			sound_manager.playAudio("TentacleHit")
 			playerInArea=false
 			player.set_physics_process(false)
 			$Timer.wait_time = stunDuration
@@ -63,5 +64,6 @@ func _on_body_exited(body):
 
 func _on_timer_Canva_timeout():
 	$AnimatedSprite2D.play("Attack",2)
+	sound_manager.playAudio("TentacleAttack")
 	$Timer.wait_time = 10
 	$Timer.start()	 # Replace with function body.
