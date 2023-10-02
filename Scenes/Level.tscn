@@ -54,6 +54,10 @@ texture = ExtResource("3_iu1gn")
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
+[node name="CharacterBody2D (Olho)" parent="esquerda" instance=ExtResource("6_s24i4")]
+position = Vector2(275.524, -51.1874)
+isVertical = true
+
 [node name="direita" type="RigidBody2D" parent="."]
 position = Vector2(1135, 134)
 rotation = 1.57509

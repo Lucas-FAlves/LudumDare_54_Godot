@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 #Variaveis deste script
 @export var speed = 200
+@export var isVertical: bool = false
 var dir = 1
 var isOff = true
 var motion = Vector2.ZERO
@@ -21,8 +22,7 @@ var isTentacleSpawned : bool = false
 func _ready():
 	rng.randomize()
 	cooldown = rng.randi_range(200, 400)
-	cooldown = 300
-	eyeSprite.visible = false
+	#eyeSprite.visible = false
 	
 	# Replace with function body.
 
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		cooldown -= delta
 	else:
 		isOff = false
-		eyeSprite.visible = true
+		#eyeSprite.visible = true
 		if eyeAnimatedSprite != null:
 			eyeAnimatedSprite.play("Opening")
 			spawn_tentacle()
@@ -46,10 +46,16 @@ func _physics_process(delta):
 
 
 func eye_move(delta):
-	if is_on_wall():
-		dir *= -1
-	motion.x = speed * dir
-	velocity += motion*delta
+	if !isVertical:
+		if is_on_wall():
+			dir *= -1
+		motion.x = speed * dir
+		velocity += motion*delta
+	if isVertical:
+		if is_on_floor() || is_on_ceiling():
+			dir *= -1
+		motion.y = speed*dir
+		velocity += motion*delta
 	move_and_slide()
 	
 			
