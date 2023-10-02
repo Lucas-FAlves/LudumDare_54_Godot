@@ -21,6 +21,7 @@ var isTentacleSpawned : bool = false
 func _ready():
 	rng.randomize()
 	cooldown = rng.randi_range(200, 400)
+	cooldown = 300
 	eyeSprite.visible = false
 	
 	# Replace with function body.
@@ -60,28 +61,24 @@ func spawn_tentacle():
 			coinFlip = 1
 		else:
 			coinFlip = -1
-		var aux = rng.randf_range(0.0000001,0.0000003)
-		var offset = Vector2(0,2)
+		#var aux = rng.randf_range(0.0000001,0.0000003)
+		var offset = Vector2(rng.randi_range(40,150),0)
 		var reference_position = self.position
-		var new_position:Vector2 = reference_position + offset*coinFlip
+		var new_position:Vector2 = offset*coinFlip
+		
 		print("Global position: ",reference_position, "Tipo: ", typeof(reference_position))
 		print("Offset :",offset)
+		print("Coin Flip: ", coinFlip)
 		print("New Position: ",new_position)
-#		instance.global_position.x += new_position.x
-#		instance.global_position.y += new_position.y
-		print("Instance Position ", instance.position)
-#		var new_position = reference_position + aux*coinFlip
-#		instance.global_position = new_position
-		# instance.position.y = self.position.y + aux*coinFlip
-		# print(self.position.y)
-		# print(aux)
-		# print(coinFlip)
-		# print(instance.position.y)
+#		
+		print("Instance Position (before add_child)", instance.position)
+		instance.position = new_position
 		add_child(instance)
-		print("Instance Position ", instance.position)
-		instance.position.x = new_position.x
-		instance.position.y = new_position.y
-		print("Instance Position ", instance.position)
-		print("Posicao do olho: ", self.position)
+		print("Instance Position (after add_child) ", instance.position)
+		
+#		instance.position.x = new_position.x
+#		instance.position.y = new_position.y
+		print("Instance Position (after trying to set it again) ", instance.position)
+		
 		isTentacleSpawned = true
 		
