@@ -36,7 +36,8 @@ scale = Vector2(9.0625, 5.14844)
 texture = ExtResource("1_5aemt")
 
 [node name="cima" type="RigidBody2D" parent="."]
-position = Vector2(247, 0)
+position = Vector2(263, 16)
+collision_layer = 2
 gravity_scale = 0.0
 script = ExtResource("3_ls2jr")
 
@@ -50,10 +51,13 @@ position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
 [node name="esquerda" type="RigidBody2D" parent="."]
-position = Vector2(-24, 129)
+position = Vector2(16, 77)
 rotation = 1.57509
 scale = Vector2(0.601672, 1.02979)
+collision_layer = 2
 gravity_scale = 0.0
+script = ExtResource("3_ls2jr")
+move_direction = Vector2(1, 0)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="esquerda"]
@@ -66,10 +70,14 @@ position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
 [node name="direita" type="RigidBody2D" parent="."]
-position = Vector2(1135, 134)
-rotation = 1.57509
+position = Vector2(1098, 118)
+rotation = 1.5708
 scale = Vector2(0.594864, 1.00319)
+collision_layer = 2
 gravity_scale = 0.0
+script = ExtResource("3_ls2jr")
+move_direction = Vector2(-1, 0)
+move_limit = Vector2(-100, 0)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="direita"]
@@ -82,8 +90,11 @@ position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
 [node name="baixo" type="RigidBody2D" parent="."]
-position = Vector2(247, 675)
+position = Vector2(244, 627)
+collision_layer = 2
 gravity_scale = 0.0
+script = ExtResource("3_ls2jr")
+move_direction = Vector2(0, -1)
 metadata/_edit_group_ = true
 
 [node name="CharacterBody2D (Olho)" parent="baixo" instance=ExtResource("6_s24i4")]
@@ -116,5 +127,7 @@ one_shot = true
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_7xiyr")
 debug_color = Color(0.560784, 0.560784, 0, 0.419608)
+
+[node name="Camera2D" type="Camera2D" parent="Player_Character"]
 
 [node name="SoundManager" parent="." instance=ExtResource("9_75wnd")]

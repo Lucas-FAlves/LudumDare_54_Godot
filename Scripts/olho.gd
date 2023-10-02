@@ -73,6 +73,7 @@ func spawn_tentacle():
 #		
 		print("Instance Position (before add_child)", instance.position)
 		instance.position = new_position
+		instance.rotate(get_parent().rotation + deg_to_rad(-90))
 		add_child(instance)
 		print("Instance Position (after add_child) ", instance.position)
 		
