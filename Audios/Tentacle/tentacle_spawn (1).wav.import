@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://f50ig46ftabt"
+path="res://.godot/imported/tentacle_spawn (1).wav-0b67e6962c4b5a9af86a793122c90950.sample"
+
+[deps]
+
+source_file="res://Audios/Tentacle/tentacle_spawn (1).wav"
+dest_files=["res://.godot/imported/tentacle_spawn (1).wav-0b67e6962c4b5a9af86a793122c90950.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

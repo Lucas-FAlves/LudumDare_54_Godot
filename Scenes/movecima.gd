@@ -20,6 +20,7 @@ func _process(delta):
 		var motion = move_direction * move_speed * delta
 		print(motion)
 		global_position += motion
+		sound_manager.playAudio("WallMoving")
 
 		# Verifica se atingiu o limite
 		if global_position.y >= initialPosition.y:

@@ -30,6 +30,6 @@ func _on_animated_sprite_2d_animation_finished():
 	if killNode:
 		killNode = false
 		olho.get_node("CollisionShape2D/AnimatedSprite2D").play("Closing")
-		sound_manager.playAudio("EyeClosing")
-		print("matou polvo")
+		sound_manager.playAudio("EyesClosing")
+		olho.queue_free()
 	jogador.set_physics_process(true) 

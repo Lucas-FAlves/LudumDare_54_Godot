@@ -36,7 +36,6 @@ func apply_friction(amount):
 
 func apply_movement(accel):
 	$PlayerCollider/AnimatedSprite2D.play("Walking", animSpeed)
-	sound_manager.playAudio("CharacterWalking")
 	velocity += accel
 	#não deixa o jogador passar de uma velocidade máxima
 	velocity = velocity.limit_length(max_speed)

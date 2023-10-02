@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://jh2cwqsux7ji"]
+[gd_scene load_steps=6 format=3 uid="uid://jh2cwqsux7ji"]
 
 [ext_resource type="Script" path="res://Scenes/sound_manager.gd" id="1_kv5gm"]
 [ext_resource type="AudioStream" uid="uid://vqafb1c0ks8c" path="res://Audios/WhatsApp-Ptt-2023-10-02-at-01.00.22.wav" id="2_6x4os"]
+[ext_resource type="AudioStream" uid="uid://dklra4b6ls4wg" path="res://Audios/Eye/Hit/eyehit_1 (1).wav" id="3_abvqk"]
+[ext_resource type="AudioStream" uid="uid://cwce1dnbhrdje" path="res://Audios/ataque_personagem.wav" id="4_8nhxi"]
+[ext_resource type="AudioStream" uid="uid://f50ig46ftabt" path="res://Audios/Tentacle/tentacle_spawn (1).wav" id="4_m7gre"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_kv5gm")
@@ -23,14 +26,10 @@ stream = ExtResource("2_6x4os")
 bus = &"VFX"
 
 [node name="EyesClosing" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_6x4os")
+stream = ExtResource("3_abvqk")
 bus = &"VFX"
 
 [node name="CharacterWalking" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_6x4os")
-bus = &"VFX"
-
-[node name="CharacterAttacking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_6x4os")
 bus = &"VFX"
 
@@ -38,5 +37,9 @@ bus = &"VFX"
 stream = ExtResource("2_6x4os")
 bus = &"Music"
 
+[node name="CharacterAttacking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8nhxi")
+bus = &"VFX"
+
 [node name="TentacleSpawning" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_6x4os")
+stream = ExtResource("4_m7gre")
