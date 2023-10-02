@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://jh2cwqsux7ji"]
+[gd_scene load_steps=3 format=3 uid="uid://jh2cwqsux7ji"]
+
+[ext_resource type="Script" path="res://Scenes/sound_manager.gd" id="1_kv5gm"]
+[ext_resource type="AudioStream" uid="uid://vqafb1c0ks8c" path="res://Audios/WhatsApp-Ptt-2023-10-02-at-01.00.22.wav" id="2_6x4os"]
 
 [node name="SoundManager" type="Node"]
+script = ExtResource("1_kv5gm")
+
+[node name="TentacleAttack" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TentacleHit" type="AudioStreamPlayer2D" parent="."]
+
+[node name="WallMoving" type="AudioStreamPlayer2D" parent="."]
+
+[node name="EyesOpening" type="AudioStreamPlayer2D" parent="."]
+
+[node name="EyesClosing" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CharacterWalking" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CharacterAttacking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6x4os")

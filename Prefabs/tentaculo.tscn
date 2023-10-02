@@ -129,6 +129,9 @@ position = Vector2(-0.768364, 2.35527)
 scale = Vector2(1.28888, 1.26069)
 texture = ExtResource("19_6ckrb")
 
+[node name="PosSpawn" type="Node2D" parent="AnimatedSprite2D"]
+position = Vector2(-70.7827, 14.8233)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="CollisionShape2D/Sprite2D/Timer" to="." method="_on_timer_Canva_timeout"]

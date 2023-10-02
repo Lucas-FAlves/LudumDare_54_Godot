@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhfm63bjoib4y"]
+[gd_scene load_steps=12 format=3 uid="uid://dhfm63bjoib4y"]
 
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
 [ext_resource type="PackedScene" uid="uid://bjem8685ufbgt" path="res://Prefabs/tentaculo.tscn" id="1_hkf2b"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bn1dwvthojwhg" path="res://Sprites/TileSet/Muro.png" id="4_oh1uf"]
 [ext_resource type="PackedScene" uid="uid://ha5dvhlqmpbp" path="res://Scenes/Eye.tscn" id="5_u50mv"]
 [ext_resource type="PackedScene" uid="uid://7nw6skvby7ly" path="res://Prefabs/Olho.tscn" id="6_s24i4"]
+[ext_resource type="PackedScene" uid="uid://jh2cwqsux7ji" path="res://Scenes/sound_manager.tscn" id="9_75wnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
 size = Vector2(1162, 20)
@@ -113,3 +114,5 @@ one_shot = true
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_7xiyr")
 debug_color = Color(0.560784, 0.560784, 0, 0.419608)
+
+[node name="SoundManager" parent="." instance=ExtResource("9_75wnd")]
