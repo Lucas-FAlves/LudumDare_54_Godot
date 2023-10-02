@@ -92,7 +92,6 @@ animations = [{
 }]
 
 [node name="Area2D" type="Area2D"]
-position = Vector2(542, 264)
 scale = Vector2(1, 1.53125)
 priority = 1
 script = ExtResource("1_qqwfq")
