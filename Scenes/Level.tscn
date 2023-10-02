@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/movecima.gd" id="3_ls2jr"]
 [ext_resource type="Texture2D" uid="uid://bn1dwvthojwhg" path="res://Sprites/TileSet/Muro.png" id="4_oh1uf"]
 [ext_resource type="PackedScene" uid="uid://ha5dvhlqmpbp" path="res://Scenes/Eye.tscn" id="5_u50mv"]
+[ext_resource type="PackedScene" uid="uid://7nw6skvby7ly" path="res://Prefabs/Olho.tscn" id="6_s24i4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
 size = Vector2(1162, 20)
@@ -82,6 +83,9 @@ position = Vector2(247, 675)
 gravity_scale = 0.0
 metadata/_edit_group_ = true
 
+[node name="CharacterBody2D (Olho)" parent="baixo" instance=ExtResource("6_s24i4")]
+position = Vector2(157, -52)
+
 [node name="Sprite2D" type="Sprite2D" parent="baixo"]
 position = Vector2(322, -22)
 scale = Vector2(2.02443, 0.178571)
@@ -90,6 +94,11 @@ texture = ExtResource("4_oh1uf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="baixo"]
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
+
+[node name="Eye" parent="baixo" instance=ExtResource("5_u50mv")]
+position = Vector2(455, -82)
+rotation = 3.14159
+scale = Vector2(1.201, -0.254)
 
 [node name="Player_Character" parent="." instance=ExtResource("3_flfw1")]
 process_mode = 1
@@ -104,6 +113,3 @@ one_shot = true
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_7xiyr")
 debug_color = Color(0.560784, 0.560784, 0, 0.419608)
-
-[node name="Eye" parent="." instance=ExtResource("5_u50mv")]
-position = Vector2(702, 593)
