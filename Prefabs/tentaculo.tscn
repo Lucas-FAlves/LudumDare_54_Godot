@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjem8685ufbgt"]
+[gd_scene load_steps=26 format=3 uid="uid://bjem8685ufbgt"]
 
 [ext_resource type="Script" path="res://Scenes/triggertentaculo.gd" id="1_qqwfq"]
 [ext_resource type="Texture2D" uid="uid://c6upt4w8iy34k" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_0.png" id="2_1b6ca"]
 [ext_resource type="Texture2D" uid="uid://by2mbt4ed12jc" path="res://Sprites/Tentacle_Area.png" id="2_t8cxk"]
 [ext_resource type="Texture2D" uid="uid://nwqvfdtlr3cg" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_1.png" id="3_rrgks"]
+[ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="3_wxrxl"]
 [ext_resource type="Texture2D" uid="uid://bqjhf0fp87y7h" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_2.png" id="4_q7cic"]
 [ext_resource type="Texture2D" uid="uid://ws5akqmjobl8" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_3.png" id="5_x7ucn"]
 [ext_resource type="Texture2D" uid="uid://dlbchiqjh3u38" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_4.png" id="6_hu3tk"]
@@ -24,6 +25,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
 size = Vector2(59.9236, 352.617)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ybgio"]
+radius = 30.0574
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkjhu"]
 animations = [{
@@ -109,6 +113,19 @@ modulate = Color(1, 1, 1, 0.298039)
 position = Vector2(-0.666856, -0.131489)
 scale = Vector2(1.23665, 2.47212)
 texture = ExtResource("2_t8cxk")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CollisionShape2D"]
+position = Vector2(-0.122589, 175.84)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/RigidBody2D"]
+scale = Vector2(1, 0.417587)
+shape = SubResource("CircleShape2D_ybgio")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D/RigidBody2D"]
+position = Vector2(0, -2.33597)
+scale = Vector2(0.0386023, 0.0161422)
+texture = ExtResource("3_wxrxl")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
