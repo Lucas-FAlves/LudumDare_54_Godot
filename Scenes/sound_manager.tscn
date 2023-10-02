@@ -7,16 +7,26 @@
 script = ExtResource("1_kv5gm")
 
 [node name="TentacleAttack" type="AudioStreamPlayer2D" parent="."]
+bus = &"VFX"
 
 [node name="TentacleHit" type="AudioStreamPlayer2D" parent="."]
+bus = &"VFX"
 
 [node name="WallMoving" type="AudioStreamPlayer2D" parent="."]
+bus = &"VFX"
 
 [node name="EyesOpening" type="AudioStreamPlayer2D" parent="."]
+bus = &"VFX"
 
 [node name="EyesClosing" type="AudioStreamPlayer2D" parent="."]
+bus = &"VFX"
 
 [node name="CharacterWalking" type="AudioStreamPlayer2D" parent="."]
+bus = &"VFX"
 
 [node name="CharacterAttacking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_6x4os")
+bus = &"VFX"
+
+[node name="MainSong" type="AudioStreamPlayer2D" parent="."]
+bus = &"Music"
