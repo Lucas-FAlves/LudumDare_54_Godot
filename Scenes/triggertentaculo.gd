@@ -6,6 +6,7 @@ const pushStrength = 10  # Força do empurrão
 @onready var hitArea: CanvasItem = $CollisionShape2D/Sprite2D
 var playerInArea = false
 var time_to_attack = 3
+var state:bool = false
 
 func _process(delta):
 	pass
@@ -37,6 +38,7 @@ func _on_timer_timeout():
 
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation=="Attack":
+		state = true
 		if playerInArea == true:
 			playerInArea=false
 			player.set_physics_process(false)
@@ -44,7 +46,8 @@ func _on_animated_sprite_2d_animation_finished():
 			$Timer.start()
 		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.play("Spawn", true)
-		#attacked = false
+	if $AnimatedSprite2D.animation == "Spawn" and state:
+		self.queue_free()
 
 func _on_body_exited(body):
 	if body.name == "Player_Character":
