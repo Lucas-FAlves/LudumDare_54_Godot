@@ -40,7 +40,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation=="Attack":
 		state = true
 		if playerInArea == true:
-			sound_manager.playAudio("TentacleHit")
+			#sound_manager.playAudio("TentacleHit")
 			playerInArea=false
 			player.set_physics_process(false)
 			$Timer.wait_time = stunDuration

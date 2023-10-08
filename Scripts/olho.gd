@@ -10,7 +10,7 @@ var coinFlip:int
 #Cooldown aleatorio pra ativar o sprite do olho
 var rng = RandomNumberGenerator.new()
 @export var cooldown : int
-
+@onready var canva_olho: CanvasItem = $Eye
 #referencias
 @onready var eyeSprite: CharacterBody2D = self
 @onready var eyeAnimatedSprite = get_node("Eye/CollisionShape2D/AnimatedSprite2D")
@@ -26,7 +26,19 @@ func _ready():
 	
 	# Replace with function body.
 
-
+func _process(delta):
+	if canva_olho.visible == false:
+		#isTentacleSpawned = false
+		#_startcooldown()
+		cooldown = 50
+		#self.set_physics_process(true)
+		
+	
+func _startcooldown():
+	rng.randomize()
+	cooldown = 50
+	#cooldown = rng.randi_range(200, 400)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if cooldown > 0:
@@ -34,11 +46,13 @@ func _physics_process(delta):
 		cooldown -= delta
 	else:
 		isOff = false
-		#eyeSprite.visible = true
-		if eyeAnimatedSprite != null:
-			eyeAnimatedSprite.play("Opening")
-			spawn_tentacle()
+		
+		#if eyeAnimatedSprite != null:
 			
+		eyeAnimatedSprite.play("Opening")
+		spawn_tentacle()
+			
+	print(isOff)
 	if isOff == true:
 		eye_move(delta)
 		
@@ -60,6 +74,7 @@ func eye_move(delta):
 	
 			
 func spawn_tentacle():
+	#canva_olho.visible = true
 	if !isTentacleSpawned:
 		var instance = tentacleScene.instantiate()
 		var cf = rng.randi_range(0,1)
@@ -83,8 +98,8 @@ func spawn_tentacle():
 		add_child(instance)
 		print("Instance Position (after add_child) ", instance.position)
 		
-#		instance.position.x = new_position.x
-#		instance.position.y = new_position.y
+		instance.position.x = new_position.x
+		instance.position.y = new_position.y
 		print("Instance Position (after trying to set it again) ", instance.position)
 		
 		isTentacleSpawned = true
