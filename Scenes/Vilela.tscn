@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wsteo324ccsy"]
+[gd_scene load_steps=15 format=3 uid="uid://wsteo324ccsy"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_fivf2"]
 [ext_resource type="PackedScene" uid="uid://7qqgp5i0pm6p" path="res://Cenário.tscn" id="2_guxqi"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bn1dwvthojwhg" path="res://Sprites/TileSet/Muro.png" id="6_sk6k8"]
 [ext_resource type="Script" path="res://Scenes/esquerda.gd" id="7_6ag3d"]
 [ext_resource type="PackedScene" uid="uid://7nw6skvby7ly" path="res://Prefabs/Olho.tscn" id="7_okt4f"]
-[ext_resource type="PackedScene" uid="uid://ha5dvhlqmpbp" path="res://Scenes/Eye.tscn" id="8_8j63a"]
 [ext_resource type="Script" path="res://Scenes/direita.gd" id="8_rdeqn"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="9_gxic7"]
 [ext_resource type="Script" path="res://Scenes/movebaixo.gd" id="9_ugcn7"]
@@ -90,7 +89,7 @@ position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
 [node name="baixo" type="RigidBody2D" parent="."]
-position = Vector2(293, 640)
+position = Vector2(293, 628)
 scale = Vector2(0.909803, 1)
 collision_layer = 128
 gravity_scale = 0.0
@@ -109,12 +108,6 @@ texture = ExtResource("6_sk6k8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="baixo"]
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
-
-[node name="Eye" parent="baixo" instance=ExtResource("8_8j63a")]
-process_mode = 4
-position = Vector2(455, -82)
-rotation = 3.14159
-scale = Vector2(1.201, -0.254)
 
 [node name="Player_Character" parent="." instance=ExtResource("9_gxic7")]
 process_mode = 1
