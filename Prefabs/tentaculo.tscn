@@ -1,20 +1,21 @@
-[gd_scene load_steps=23 format=3 uid="uid://bjem8685ufbgt"]
+[gd_scene load_steps=24 format=3 uid="uid://bjem8685ufbgt"]
 
 [ext_resource type="Script" path="res://Scenes/triggertentaculo.gd" id="1_qqwfq"]
-[ext_resource type="Texture2D" uid="uid://c6upt4w8iy34k" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_0.png" id="2_1b6ca"]
-[ext_resource type="Texture2D" uid="uid://nwqvfdtlr3cg" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_1.png" id="3_rrgks"]
-[ext_resource type="Texture2D" uid="uid://bqjhf0fp87y7h" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_2.png" id="4_q7cic"]
-[ext_resource type="Texture2D" uid="uid://ws5akqmjobl8" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_3.png" id="5_x7ucn"]
-[ext_resource type="Texture2D" uid="uid://dlbchiqjh3u38" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_4.png" id="6_hu3tk"]
-[ext_resource type="Texture2D" uid="uid://doj8utfedd37x" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_5.png" id="7_tt2dl"]
-[ext_resource type="Texture2D" uid="uid://dufp402rrbg2a" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_6.png" id="8_mfm2x"]
-[ext_resource type="Texture2D" uid="uid://b17rpeyjdv2cr" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_7.png" id="9_2w24q"]
-[ext_resource type="Texture2D" uid="uid://dx4wm7wxijb55" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_8.png" id="10_ojmme"]
-[ext_resource type="Texture2D" uid="uid://bxwom2tsupgbx" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_9.png" id="11_cipli"]
-[ext_resource type="Texture2D" uid="uid://d1rks2fusl2rc" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_10.png" id="12_qats7"]
-[ext_resource type="Texture2D" uid="uid://cf043gnnaqt5a" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_11.png" id="13_skrkc"]
-[ext_resource type="Texture2D" uid="uid://cg60mpqgj3u7r" path="res://Sprites/Tentaculos/Atacando/tentaculos_attack_12.png" id="14_3dcc8"]
+[ext_resource type="Texture2D" uid="uid://by2mbt4ed12jc" path="res://Sprites/Tentacle_Area.png" id="2_t8cxk"]
+[ext_resource type="Texture2D" uid="uid://cwmca8o73k2g5" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_0.png" id="3_4b84e"]
+[ext_resource type="Texture2D" uid="uid://c21lu28wmnyaq" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_1.png" id="4_4pstk"]
+[ext_resource type="Texture2D" uid="uid://8sbs5d7h4t8q" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_2.png" id="5_82x0y"]
+[ext_resource type="Texture2D" uid="uid://b8s6d50l4vrn2" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_3.png" id="6_j20go"]
+[ext_resource type="Texture2D" uid="uid://0doqcipduef5" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_4.png" id="7_oifve"]
+[ext_resource type="Texture2D" uid="uid://cymhylkk52nq1" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_5.png" id="8_xc3vo"]
+[ext_resource type="Texture2D" uid="uid://bl680x3srsy1n" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_6.png" id="9_veyye"]
+[ext_resource type="Texture2D" uid="uid://bfw3tfbwfr12i" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_7.png" id="10_s6eir"]
+[ext_resource type="Texture2D" uid="uid://cjuvaf36njtyt" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_8.png" id="11_tt4yh"]
+[ext_resource type="Texture2D" uid="uid://bpecrwcwb6qf1" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_9.png" id="12_l0mrs"]
+[ext_resource type="Texture2D" uid="uid://b2gyue0gfoda7" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_10.png" id="13_bm8hv"]
+[ext_resource type="Texture2D" uid="uid://c1njbrsbemn3h" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_11.png" id="14_4clsd"]
 [ext_resource type="Texture2D" uid="uid://bq0vqqioctqp" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_0.png" id="15_7fxj6"]
+[ext_resource type="Texture2D" uid="uid://ccfh0ly0fg0pl" path="res://Sprites/Tentaculos/Novo_Atacando/tentaculos_attack_12.png" id="15_hglbf"]
 [ext_resource type="Texture2D" uid="uid://cbvkt5mt6jjls" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_1.png" id="16_p24ft"]
 [ext_resource type="Texture2D" uid="uid://wnlir105wj4j" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_2.png" id="17_832km"]
 [ext_resource type="Texture2D" uid="uid://c78dwistgkobr" path="res://Sprites/Tentaculos/Spawnando/Tentaculo_Spawn_3.png" id="18_87o60"]
@@ -22,52 +23,60 @@
 [ext_resource type="Script" path="res://Scripts/TentacleAnimHandler.gd" id="20_qvxax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vj7hb"]
-size = Vector2(123, 128.653)
+size = Vector2(59.9236, 352.617)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dkjhu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_1b6ca")
+"texture": ExtResource("3_4b84e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_rrgks")
+"texture": ExtResource("4_4pstk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_q7cic")
+"texture": ExtResource("5_82x0y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_x7ucn")
+"texture": ExtResource("6_j20go")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_hu3tk")
+"texture": ExtResource("7_oifve")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_tt2dl")
+"texture": ExtResource("8_xc3vo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_mfm2x")
+"texture": ExtResource("9_veyye")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_2w24q")
+"texture": ExtResource("10_s6eir")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_ojmme")
+"texture": ExtResource("11_tt4yh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_cipli")
+"texture": ExtResource("12_l0mrs")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_qats7")
+"texture": ExtResource("13_bm8hv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_skrkc")
+"texture": ExtResource("14_4clsd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_3dcc8")
+"texture": ExtResource("15_hglbf")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_6ckrb")
 }],
 "loop": true,
-"name": &"Attack",
+"name": &"Idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -86,32 +95,54 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_6ckrb")
 }],
-"loop": true,
+"loop": false,
 "name": &"Spawn",
 "speed": 5.0
 }]
 
 [node name="Area2D" type="Area2D"]
+position = Vector2(542, 264)
 scale = Vector2(1, 1.53125)
 priority = 1
 script = ExtResource("1_qqwfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12.3589, -1.55872)
+rotation = 1.57079
 shape = SubResource("RectangleShape2D_vj7hb")
-debug_color = Color(0.933333, 0, 0.647059, 0.419608)
+debug_color = Color(1, 0.180392, 1, 0.329412)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+visible = false
+modulate = Color(1, 1, 1, 0.298039)
+position = Vector2(-0.666856, -0.131489)
+scale = Vector2(1.23665, 2.47212)
+texture = ExtResource("2_t8cxk")
+
+[node name="Timer" type="Timer" parent="CollisionShape2D/Sprite2D"]
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-165.007, -19.466)
+scale = Vector2(2.71243, 2.15027)
 sprite_frames = SubResource("SpriteFrames_dkjhu")
-animation = &"Attack"
+animation = &"Idle"
 script = ExtResource("20_qvxax")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatedSprite2D"]
-position = Vector2(-34.25, -0.954086)
-scale = Vector2(3.32353, 2.52138)
+visible = false
+position = Vector2(-0.768364, 2.35527)
+scale = Vector2(1.28888, 1.26069)
 texture = ExtResource("19_6ckrb")
 
+[node name="PosSpawn" type="Node2D" parent="AnimatedSprite2D"]
+position = Vector2(-70.7827, 14.8233)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="CollisionShape2D/Sprite2D/Timer" to="." method="_on_timer_Canva_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]

@@ -5,7 +5,7 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CollisionShape2D/Sprite2D.rotate(1.5708*2)
-	#animatedSprite2D.play("Opening")
+	animatedSprite2D.play("Opening")
 	animatedSprite2D.flip_v=true
 	
 func _on_tree_exiting():
@@ -19,5 +19,5 @@ func _on_animated_sprite_2d_animation_finished():
 		animatedSprite2D.stop()
 	if animatedSprite2D.animation == "Closing":
 		print("Tocou closing")
-		queue_free()
+		#queue_free()
 	

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="LudumDare_54_Project"
-run/main_scene="res://Scenes/Level.tscn"
+run/main_scene="res://Scenes/Vilela.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+sound_manager="*res://Scenes/sound_manager.tscn"
 
 [dotnet]
 
