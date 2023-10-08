@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://wsteo324ccsy"]
+[gd_scene load_steps=15 format=3 uid="uid://clc8jojm3v8i0"]
 
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_fivf2"]
-[ext_resource type="PackedScene" uid="uid://7qqgp5i0pm6p" path="res://Cenário.tscn" id="2_guxqi"]
+[ext_resource type="PackedScene" path="res://Cenário.tscn" id="2_guxqi"]
 [ext_resource type="PackedScene" uid="uid://bjem8685ufbgt" path="res://Prefabs/tentaculo.tscn" id="3_ycvcm"]
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="4_1ua4j"]
 [ext_resource type="Script" path="res://Scenes/movecima.gd" id="5_owi8u"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/direita.gd" id="8_rdeqn"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="9_gxic7"]
 [ext_resource type="Script" path="res://Scenes/movebaixo.gd" id="9_ugcn7"]
-[ext_resource type="PackedScene" uid="uid://jh2cwqsux7ji" path="res://Scenes/sound_manager.tscn" id="10_ui3rw"]
+[ext_resource type="PackedScene" path="res://Scenes/sound_manager.tscn" id="10_ui3rw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
 size = Vector2(1162, 20)
@@ -70,12 +70,18 @@ texture = ExtResource("6_sk6k8")
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
+[node name="CharacterBody2D (Olho)" parent="esquerda" instance=ExtResource("7_okt4f")]
+position = Vector2(61.5906, -52.4841)
+collision_mask = 240
+isVertical = true
+
 [node name="direita" type="RigidBody2D" parent="."]
 position = Vector2(1103, 214)
 rotation = 1.5708
 scale = Vector2(0.309664, 1.00319)
 collision_layer = 64
 gravity_scale = 0.0
+freeze_mode = 1
 script = ExtResource("8_rdeqn")
 metadata/_edit_group_ = true
 
@@ -99,6 +105,7 @@ metadata/_edit_group_ = true
 [node name="CharacterBody2D (Olho)" parent="baixo" instance=ExtResource("7_okt4f")]
 position = Vector2(76, -52)
 collision_layer = 128
+collision_mask = 240
 
 [node name="Sprite2D" type="Sprite2D" parent="baixo"]
 position = Vector2(322, -22)
@@ -112,6 +119,7 @@ shape = SubResource("RectangleShape2D_2w6an")
 [node name="Player_Character" parent="." instance=ExtResource("9_gxic7")]
 process_mode = 1
 position = Vector2(593, 285)
+collision_mask = 240
 
 [node name="Area2D" type="Area2D" parent="Player_Character"]
 

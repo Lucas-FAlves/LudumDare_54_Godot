@@ -37,4 +37,5 @@ func _on_animated_sprite_2d_animation_finished():
 		sound_manager.playAudio("EyesClosing")
 		#olho.queue_free()
 		canva_olho.visible = false
+		olho.wall.stop_movement()
 	jogador.set_physics_process(true) 

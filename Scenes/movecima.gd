@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var move_speed = 100  # Velocidade de movimento
+@export var move_speed = 25  # Velocidade de movimento
 @export var move_direction = Vector2.DOWN  # Direção inicial
 var is_moving = false  # Indica se o RigidBody2D está se movendo
 @export var move_limit = Vector2 (0,100)  # Limite para onde o RigidBody2D deve se mover
@@ -11,7 +11,7 @@ func _ready():
 	# Obtém a posição inicial do objeto
 	initialPosition = global_position  # Ou use "position" em vez de "global_position" se for relativa ao nó pai
 	initialPosition += move_limit
-	start_movement()
+	#start_movement()
 
 func _process(delta):
 	if is_moving:

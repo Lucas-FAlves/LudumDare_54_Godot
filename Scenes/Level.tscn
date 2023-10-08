@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://dghqpfio7gp2u" path="res://icon.svg" id="1_5aemt"]
 [ext_resource type="PackedScene" uid="uid://bjem8685ufbgt" path="res://Prefabs/tentaculo.tscn" id="1_hkf2b"]
 [ext_resource type="Script" path="res://Scenes/Level.gd" id="1_tp3bf"]
-[ext_resource type="PackedScene" uid="uid://7qqgp5i0pm6p" path="res://Cenário.tscn" id="2_7s37c"]
+[ext_resource type="PackedScene" path="res://Cenário.tscn" id="2_7s37c"]
 [ext_resource type="PackedScene" uid="uid://167vaub0r1l0" path="res://Scenes/Player_Character.tscn" id="3_flfw1"]
 [ext_resource type="Script" path="res://Scenes/movecima.gd" id="3_ls2jr"]
 [ext_resource type="Texture2D" uid="uid://bn1dwvthojwhg" path="res://Sprites/TileSet/Muro.png" id="4_oh1uf"]
 [ext_resource type="PackedScene" uid="uid://7nw6skvby7ly" path="res://Prefabs/Olho.tscn" id="6_s24i4"]
-[ext_resource type="PackedScene" uid="uid://jh2cwqsux7ji" path="res://Scenes/sound_manager.tscn" id="9_75wnd"]
+[ext_resource type="PackedScene" path="res://Scenes/sound_manager.tscn" id="9_75wnd"]
 [ext_resource type="Texture2D" uid="uid://c2l4pe57274r8" path="res://fotor-ai-2023091318285.jpg" id="11_hdjw2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w6an"]
@@ -54,6 +54,8 @@ texture = ExtResource("4_oh1uf")
 position = Vector2(323, -24)
 shape = SubResource("RectangleShape2D_2w6an")
 
+[node name="CharacterBody2D (Olho)" parent="cima" instance=ExtResource("6_s24i4")]
+
 [node name="esquerda" type="RigidBody2D" parent="."]
 position = Vector2(16, 77)
 rotation = 1.57509
@@ -64,6 +66,9 @@ script = ExtResource("3_ls2jr")
 move_speed = 0
 move_direction = Vector2(1, 0)
 metadata/_edit_group_ = true
+
+[node name="CharacterBody2D (Olho)" parent="esquerda" instance=ExtResource("6_s24i4")]
+isVertical = true
 
 [node name="Sprite2D" type="Sprite2D" parent="esquerda"]
 position = Vector2(322.287, -25.0714)
@@ -85,6 +90,9 @@ move_speed = 0
 move_direction = Vector2(-1, 0)
 move_limit = Vector2(-100, 0)
 metadata/_edit_group_ = true
+
+[node name="CharacterBody2D (Olho)" parent="direita" instance=ExtResource("6_s24i4")]
+isVertical = true
 
 [node name="Sprite2D" type="Sprite2D" parent="direita"]
 position = Vector2(319.823, -21.757)
@@ -114,7 +122,6 @@ shape = SubResource("RectangleShape2D_2w6an")
 
 [node name="CharacterBody2D (Olho)" parent="baixo" instance=ExtResource("6_s24i4")]
 position = Vector2(346, -55)
-rotation = 3.14159
 collision_layer = 256
 collision_mask = 240
 
