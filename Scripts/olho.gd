@@ -22,7 +22,7 @@ var isTentacleSpawned : bool = false
 func _ready():
 	rng.randomize()
 	cooldown = rng.randi_range(200, 400)
-	#eyeSprite.visible = false
+	eyeSprite.visible = false
 	
 	# Replace with function body.
 
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		cooldown -= delta
 	else:
 		isOff = false
-		#eyeSprite.visible = true
+		eyeSprite.visible = true
 		if eyeAnimatedSprite != null:
 			eyeAnimatedSprite.play("Opening")
 			spawn_tentacle()
