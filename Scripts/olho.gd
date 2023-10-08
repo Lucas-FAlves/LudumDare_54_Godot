@@ -24,7 +24,7 @@ func _ready():
 	rng.randomize()
 	cooldown = rng.randi_range(200, 400)
 	wall.stop_movement()
-	#eyeSprite.visible = false
+	eyeSprite.visible = false
 	
 	# Replace with function body.
 
@@ -37,7 +37,7 @@ func _physics_process(delta):
 	else:
 		isOff = false
 		wall.start_movement()
-		#eyeSprite.visible = true
+		eyeSprite.visible = true
 		if eyeAnimatedSprite != null:
 			eyeAnimatedSprite.play("Opening")
 			spawn_tentacle()
