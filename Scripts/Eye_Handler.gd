@@ -19,5 +19,5 @@ func _on_animated_sprite_2d_animation_finished():
 		animatedSprite2D.stop()
 	if animatedSprite2D.animation == "Closing":
 		print("Tocou closing")
-		queue_free()
+		#queue_free()
 	

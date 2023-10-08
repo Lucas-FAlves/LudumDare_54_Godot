@@ -40,6 +40,7 @@ theme_override_font_sizes/font_size = 39
 text = "Try Again"
 
 [node name="mensage" type="Label" parent="."]
+layout_mode = 0
 offset_left = 388.0
 offset_top = 318.0
 offset_right = 754.0
